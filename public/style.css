@@ -1,0 +1,10 @@
+/* utils */
+
+/* Add space between top and bottom of element */
+.spacer{
+    margin: 5px 0px 5px 0px
+}
+/* align item to the center of the page */
+.align-center{
+    text-align: center;
+}
