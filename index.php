@@ -1,5 +1,40 @@
 <?php include './includes/header.php'; ?>
 
+<?php 
+
+// If user LOGGED IN redirect them to the dashboard page
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+    // CHANGE LOCATION OF REDIRECT
+    header("location: welcome.php");
+    exit;
+}
+
+// Login Form Post Request Handler
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+// Check username and password exist in $_POST
+isset($_POST["username"]);
+isset($_POST["password"]);
+
+// Store username and password in vars
+$username = $_POST["username"];
+$password = $_POST["password"];
+
+// Construct query
+$sql = "SELECT ID, username, password, role FROM user WHERE username = $username";
+
+
+// TEST REMOVE LATER
+// echo $username . " " . $password;
+
+// TEST REMOVE LATER
+// if($username == "hello") { echo " hello"; }
+
+// }
+
+
+?>
+
+
 <!-- DIV -->
 <div class="container">
 
@@ -7,7 +42,7 @@
     <!-- Loginbox -->
     <div class="login-box">
 
-        <form action="" method="post" class="login-form">
+        <form action="./index.php" method="post" class="login-form">
             <!-- Username -->
             <input type="text" name="username" id="username-input" placeholder="Username"><br>
             <!-- Password -->
