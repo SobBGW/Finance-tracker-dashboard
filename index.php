@@ -2,6 +2,9 @@
 
 
 <?php 
+
+session_start();
+
 // Check if user logged in redirect them to the dashboard page
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     // CHANGE LOCATION OF REDIRECT
@@ -9,12 +12,44 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     exit;
 }
 
+// Load in database
+include './config.php';
+
+// Connect to database
+$conn = new mysqli($servername, $username, $password, $dbname);
+if($conn -> connect_error) {
+    die("connection failed:" . $conn -> connect_error);
+}
+
+// Login vars
+$username = $password = "";
+$error = "";
+
 // Login Form Post Request Handler
 if($_SERVER["REQUEST_METHOD"] == "POST"){
+
+    if(empty($_POST["username"]) or empty($_POST["password"])) {
+        $error = "username or password is missing";
+    }
+
+    $username = trim($_POST["username"]);
+    $password = trim($_POST["password"]);
+
+    $sql = "SELECT id, firstname, lastname, username, password, user_group, role FROM users";
+    $result = $conn -> query($sql);
+
+    echo $conn -> error;
+
+
+
+
     // Check username and password exist in $_POST
-    isset($_POST["username"]);
-    isset($_POST["password"]);
+    // isset($_POST["username"]);
+    // isset($_POST["password"]);
+
+    // 
 }
+
     
 // Store username and password in vars
 $username = $_POST["username"];

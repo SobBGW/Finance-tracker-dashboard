@@ -16,7 +16,7 @@ $sql = "CREATE TABLE users (
     email VARCHAR(50),
     password VARCHAR(100),
     role VARCHAR(20),
-    group VARCHAR(20)
+    user_group VARCHAR(20)
 );"
 ;
 

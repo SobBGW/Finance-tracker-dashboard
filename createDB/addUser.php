@@ -8,7 +8,7 @@ if($conn -> connect_error) {
 }
 
 // SQL Statement
-$sql = "INSERT INTO users (firstname, lastname, email, password, role, group) VALUES ('john', 'ham', 'john.ham@gmail.com', 'hejgajshjksadj', 'member', 'finance')";
+$sql = "INSERT INTO users (firstname, lastname, username, password, role, user_group) VALUES ('john', 'ham', 'john.ham@gmail.com', 'hejgajshjksadj', 'member', 'finance')";
 
 // Execute sql statement
 if($conn -> query($sql) === TRUE) {
