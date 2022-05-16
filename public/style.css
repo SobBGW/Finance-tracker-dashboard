@@ -1,10 +1,25 @@
 /* index.php - Login Page */
+:root {
+    --Background-colour: #112d40;
+    --Widget-colour: #0b3755;
+    --White-text-colour: #fff;
+    --Grey-text-colour: #cdcdcd;
+    --Menu-selected-colour: #87d7ff;
+    --Font-Family: 'Open Sans', sans-serif;
+
+}
+
 body{
-    background-color: #112d40;
+    background-color: var(--Background-colour);
+    font-family: var(--Font-Family);
     padding: 0;
     margin: 0;
 }
-
+p {
+    margin: 0;
+    padding: 0;
+}
+/* Login Page */
 .login-box{
     display: flex;
     justify-content: center;
@@ -46,3 +61,61 @@ body{
 #submit-button:hover{
     background-color: rgb(125, 226, 125);
 }
+
+/* Navigation Bar */
+.sidebar {
+    margin: 0;
+    padding: 10px;
+    width: 150px;
+    background-color: var(--Background-colour);
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+.sidebar-brand {
+  color: var(--White-text-colour);
+  padding: 5px 10px 5px 10px;
+}
+
+.sidebar a {
+    display: block;
+    color: white;
+    padding: 16px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.sidebar a.active {
+    background-color: var(--Menu-selected-colour);
+    color: Black;
+}
+
+.sidebar a:hover:not(.active) {
+    background-color: #87d6fe;
+    color: white;
+}
+
+.logo {
+    padding: 10px;
+}
+
+/* Main Body */
+div.content {
+    margin-left: 180px;
+    padding: 10px 16px;
+    height: 1000px;
+}
+
+/* Dashboard Headings */
+.welcome-heading {
+    color: var(--White-text-colour);
+    font-weight: 600;
+    font-size: 35px;
+    margin: 20px 0px;
+}
+
+/* Welcome Page */
+
+

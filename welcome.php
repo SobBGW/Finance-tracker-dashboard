@@ -12,12 +12,8 @@
 
 
 <div class="content">
+    <p class="welcome-heading">Welcome back John Ham</p>
 
-    <?php if(1 !== 1) { ?>
-        <h1>hello</h1>
-    <?php } else { ?>
-        <h1>bye</h1>
-    <?php }?>
     
 </div>
 

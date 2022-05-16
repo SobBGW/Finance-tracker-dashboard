@@ -1,8 +1,8 @@
 <?php include './includes/header.php'; ?>
 
-
 <?php 
-// Check if user logged in redirect them to the dashboard page
+
+// If user logged in redirect them to the dashboard page
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     // CHANGE LOCATION OF REDIRECT
     header("location: welcome.php");
@@ -11,18 +11,29 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 
 // Login Form Post Request Handler
 if($_SERVER["REQUEST_METHOD"] == "POST"){
-    // Check username and password exist in $_POST
-    isset($_POST["username"]);
-    isset($_POST["password"]);
+// Check username and password exist in $_POST
+isset($_POST["username"]);
+isset($_POST["password"]);
 }
-    
+
 // Store username and password in vars
 $username = $_POST["username"];
 $password = $_POST["password"];
+
+
+// TEST REMOVE LATER
+// echo $username . " " . $password;
+
+// TEST REMOVE LATER
+// if($username == "hello") { echo " hello"; }
+
+// }
+
+
 ?>
 
-<!--  Div -->
 
+<!-- DIV -->
 <div class="container">
 
 
@@ -40,7 +51,3 @@ $password = $_POST["password"];
     </div>
 
 </div>
-
-<?php include "./includes/footer.php"; ?>
-
-
