@@ -44,21 +44,23 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         // $error = "Incorrect Username or Password";
 
         // Check a single result is returned
-        // if($result -> num_rows === 1){
-        //     $row = $result -> fetch_array();
-        //     // $passwordd = $row["firstname"];
-        // } else {
-        //     $error = "Please Try Again";
-        //     exit;
-        // }
+        if($result -> num_rows === 1){
+            $row = $result -> fetch_array();
+            // Get hashed password
+            $hashed_password = $row["password"];
+            // Compare password
+            if(password_verify($password, $hashed_password)){
+                // Set Session variables
+                $_SESSION["loggedin"] = "true";
+                $_SESSION["name"] = $row["firstname"] . " " . $row["lastname"];
+                $_SESSION["role"] = $row["role"];
+                $_SESSION["user_group"] = $row["user_group"];
 
+            }
 
-
-        // Check username and password exist in $_POST
-        // isset($_POST["username"]);
-        // isset($_POST["password"]);
-
-        // 
+        } else {
+            $error = "Please Try Again";
+        }
     }
 }
 
