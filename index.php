@@ -38,7 +38,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $sql = "SELECT id, firstname, lastname, username, password, user_group, role FROM users";
     $result = $conn -> query($sql);
 
-    echo $conn -> error;
+    if($result -> num_rows > 0) {
+        while($row = $result -> fetch_assoc()) {
+            $rows[] = $row;
+        }
+    } else {
+        echo "0 results";
+    }
+
+    echo $rows;
 
 
 
