@@ -10,7 +10,7 @@
 
     <!-- Show only if logged in -->
     <!-- Side Navigation Bar -->
-  <?php if(!isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] !== true){ ?>
+  <?php if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){ ?>
     <div class="sidebar">
       <!-- Blackwell Logo - REPLACE LINK WITH FILE PATH -->
       <img class="logo" src="./public/bwg.png" width="150px">

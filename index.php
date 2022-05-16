@@ -30,32 +30,36 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     if(empty($_POST["username"]) or empty($_POST["password"])) {
         $error = "username or password is missing";
-        exit;
+        // exit;
+    } else {
+
+        // Store username and password
+        $username = trim($_POST["username"]);
+        $password = trim($_POST["password"]);
+
+        // Construct and execute sql query
+        $sql = "SELECT id, firstname, lastname, username, password, user_group, role FROM users WHERE id = 8 ";
+        $result = $conn -> query($sql);
+
+        // $error = "Incorrect Username or Password";
+
+        // Check a single result is returned
+        // if($result -> num_rows === 1){
+        //     $row = $result -> fetch_array();
+        //     // $passwordd = $row["firstname"];
+        // } else {
+        //     $error = "Please Try Again";
+        //     exit;
+        // }
+
+
+
+        // Check username and password exist in $_POST
+        // isset($_POST["username"]);
+        // isset($_POST["password"]);
+
+        // 
     }
-
-    $username = trim($_POST["username"]);
-    $password = trim($_POST["password"]);
-
-    $sql = "SELECT id, firstname, lastname, username, password, user_group, role FROM users WHERE id = 8 ";
-    $result = $conn -> query($sql);
-
-    $error = "Incorrect Username or Password";
-
-    // if($result -> num_rows === 1){
-    //     $row = $result -> fetch_array();
-    //     // $passwordd = $row["firstname"];
-    // } else {
-    //     $error = "Please Try Again";
-    //     exit;
-    // }
-
-
-
-    // Check username and password exist in $_POST
-    // isset($_POST["username"]);
-    // isset($_POST["password"]);
-
-    // 
 }
 
     
