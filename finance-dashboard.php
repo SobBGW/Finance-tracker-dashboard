@@ -13,11 +13,11 @@
 
 <div class="content">
 
-    <?php if(1 !== 1) { ?>
-        <h1>hello</h1>
-    <?php } else { ?>
-        <h1>bye</h1>
-    <?php }?>
+    <div class="wrapper">
+        <div class="item item1"></div>
+        <div class="item item2"></div>
+        <div class="item item3"></div>
+    </div>
     
 </div>
 

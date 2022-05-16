@@ -13,6 +13,7 @@
 
 <div class="content">
     <p class="welcome-heading">Welcome back John Ham</p>
+    <p>Click on one of the tabs in the navigation panel to get started</p>
 
     
 </div>
