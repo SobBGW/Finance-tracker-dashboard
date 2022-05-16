@@ -35,18 +35,24 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $username = trim($_POST["username"]);
     $password = trim($_POST["password"]);
 
-    $sql = "SELECT id, firstname, lastname, username, password, user_group, role FROM users";
+    $sql = "SELECT id, firstname, lastname, username, password, user_group, role FROM users WHERE id = 8 ";
     $result = $conn -> query($sql);
+    $row = $result -> fetch_array();
+    $passwordd = $row["firstname"];
 
-    if($result -> num_rows > 0) {
-        while($row = $result -> fetch_assoc()) {
-            $rows[] = $row;
-        }
-    } else {
-        echo "0 results";
-    }
 
-    echo $rows;
+
+    echo $passwordd;
+
+    // if($result -> num_rows > 0) {
+    //     while($row = $result -> fetch_assoc()) {
+    //         $rows[] = $row;
+    //     }
+    // } else {
+    //     echo "0 results";
+    // }
+
+    // echo $rows;
 
 
 
