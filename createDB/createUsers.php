@@ -13,7 +13,7 @@ $sql = "CREATE TABLE users (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     firstname VARCHAR(30) NOT NULL,
     lastname VARCHAR(30) NOT NULL,
-    email VARCHAR(50),
+    username VARCHAR(50) UNIQUE,
     password VARCHAR(100),
     role VARCHAR(20),
     user_group VARCHAR(20)

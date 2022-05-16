@@ -63,6 +63,11 @@ p {
     background-color: rgb(125, 226, 125);
 }
 
+/* .warning-banner {
+    color: var(--White-text-colour);
+    padding: 10px;
+} */
+
 /* Navigation Bar */
 .sidebar {
     margin: 0;

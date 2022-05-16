@@ -30,6 +30,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     if(empty($_POST["username"]) or empty($_POST["password"])) {
         $error = "username or password is missing";
+        exit;
     }
 
     $username = trim($_POST["username"]);
@@ -37,23 +38,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     $sql = "SELECT id, firstname, lastname, username, password, user_group, role FROM users WHERE id = 8 ";
     $result = $conn -> query($sql);
-    $row = $result -> fetch_array();
-    $passwordd = $row["firstname"];
 
+    $error = "Incorrect Username or Password";
 
-
-    echo $passwordd;
-
-    // if($result -> num_rows > 0) {
-    //     while($row = $result -> fetch_assoc()) {
-    //         $rows[] = $row;
-    //     }
+    // if($result -> num_rows === 1){
+    //     $row = $result -> fetch_array();
+    //     // $passwordd = $row["firstname"];
     // } else {
-    //     echo "0 results";
+    //     $error = "Please Try Again";
+    //     exit;
     // }
-
-    // echo $rows;
-
 
 
 
@@ -74,11 +68,15 @@ $password = $_POST["password"];
 
 <div class="container">
 
-
     <!-- Loginbox -->
     <div class="login-box">
 
         <form action="./index.php" method="post" class="login-form">
+
+            <?php if(!empty($error)){ ?>
+                <p class="warning-banner"><?php echo $error ?></p>
+            <?php } ?>
+
             <!-- Username -->
             <input type="text" name="username" id="username-input" placeholder="Username"><br>
             <!-- Password -->
