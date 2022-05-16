@@ -2,7 +2,7 @@
 
 <?php 
 
-// If user LOGGED IN redirect them to the dashboard page
+// If user logged in redirect them to the dashboard page
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     // CHANGE LOCATION OF REDIRECT
     header("location: welcome.php");
@@ -18,9 +18,6 @@ isset($_POST["password"]);
 // Store username and password in vars
 $username = $_POST["username"];
 $password = $_POST["password"];
-
-// Construct query
-$sql = "SELECT ID, username, password, role FROM user WHERE username = $username";
 
 
 // TEST REMOVE LATER
