@@ -11,7 +11,6 @@ if(!isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] !== true){
 
 ?>
 
-
 <div class="content">
     <p class="welcome-heading">Welcome back <?php echo $_SESSION["name"] ?> - <?php echo $_SESSION["role"] ?></p>
     <p>Click on one of the tabs in the navigation panel to get started</p>

@@ -54,7 +54,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             // if(password_verify($password, $hashed_password)){
             if($password === $hashed_password){
                 // Set Session variables
-                $_SESSION["loggedin"] = "true";
+                $_SESSION["loggedin"] = true;
                 $_SESSION["name"] = $row["firstname"] . " " . $row["lastname"];
                 $_SESSION["role"] = $row["role"];
                 $_SESSION["user_group"] = $row["user_group"];
