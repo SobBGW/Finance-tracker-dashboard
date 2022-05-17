@@ -17,9 +17,10 @@
       <!-- Blackwell Logo - REPLACE LINK WITH FILE PATH -->
       <img class="logo" src="./public/bwg.png" width="150px">
       <a href="/Risk/dashboard.php">Risk BHS</a>
-      <a href="#news">Dashboard 2</a>
+      <a href="finance-tracker-dashboard/finance-dashboard.php">Finance Dashboard</a>
       <a href="#contact">Dashboard 3</a>
       <a href="#about">Dashboard 4</a>
+      <a href="#about">Logout</a>
     </div>
     
   <?php } ?>

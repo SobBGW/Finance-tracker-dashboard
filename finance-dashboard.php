@@ -12,7 +12,7 @@ if(!isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] !== true){
 
 
 <div class="content">
-    <p class="dashboard-heading">John Ham - Director </p>
+    <p class="dashboard-heading"><?php echo $_SESSION["name"] ?> - <?php echo $_SESSION["role"] ?></p>
 
     <!-- Check user role and load relevent html -->
     <div class="wrapper">
