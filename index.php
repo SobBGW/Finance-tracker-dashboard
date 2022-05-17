@@ -1,17 +1,19 @@
 <?php include './includes/header.php'; ?>
 
-
+<!-- Code Below not working correctly -->
 <?php 
-
-session_start();
+// session_start();
 
 // Check if user logged in redirect them to the dashboard page
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     // CHANGE LOCATION OF REDIRECT
     header("location: welcome.php");
-    exit;
-}
 
+    echo $_SESSION["loggedin"];
+}
+?>
+
+<?php 
 // Load in database
 include './config.php';
 
@@ -38,7 +40,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $password = trim($_POST["password"]);
 
         // Construct and execute sql query
-        $sql = "SELECT id, firstname, lastname, username, password, user_group, role FROM users WHERE id = 8 ";
+        $sql = "SELECT id, firstname, lastname, username, password, user_group, role FROM users WHERE username = '$username' ";
         $result = $conn -> query($sql);
 
         // $error = "Incorrect Username or Password";
@@ -49,13 +51,25 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             // Get hashed password
             $hashed_password = $row["password"];
             // Compare password
-            if(password_verify($password, $hashed_password)){
+            // if(password_verify($password, $hashed_password)){
+            if($password === $hashed_password){
                 // Set Session variables
                 $_SESSION["loggedin"] = "true";
                 $_SESSION["name"] = $row["firstname"] . " " . $row["lastname"];
                 $_SESSION["role"] = $row["role"];
                 $_SESSION["user_group"] = $row["user_group"];
 
+                // TEST REMOVE LATER
+                echo $_SESSION["loggedin"];
+                echo $_SESSION["name"];
+                echo $_SESSION["role"];
+                echo $_SESSION["user_group"];
+
+                // Navigate to welcome.php
+                header("location: welcome.php");
+            } else {
+                echo "Incorrect";
+                $error = "Incorrect Login Details";
             }
 
         } else {
@@ -66,8 +80,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     
 // Store username and password in vars
-$username = $_POST["username"];
-$password = $_POST["password"];
+// $username = $_POST["username"];
+// $password = $_POST["password"];
 ?>
 
 <!--  Div -->

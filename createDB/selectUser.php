@@ -9,7 +9,7 @@ if($conn -> connect_error) {
 }
 
 // SQL Statement
-$sql = "SELECT id, firstname, lastname, email, password, role, user_group FROM users WHERE username='test'";
+$sql = "SELECT id, firstname, lastname, username, password, role, user_group FROM users WHERE username='test'";
 $result = $conn -> query($sql);
 
 // Loop through result

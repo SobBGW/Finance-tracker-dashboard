@@ -2,11 +2,11 @@
 
 <?php 
 // If user NOT LOGGED IN redirect them to the Login Page
-// if(!isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] !== true){
-//     // CHANGE LOCATION OF REDIRECT
-//     header("location: index.php");
-//     exit;
-// }
+if(!isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] !== true){
+    // CHANGE LOCATION OF REDIRECT
+    header("location: index.php");
+    exit;
+}
 
 ?>
 
@@ -87,8 +87,21 @@
             </table>
         </div>
 
-        <div class="item item3"></div>
-        <div class="item item4"></div>
+        <div class="item item3">
+            <p class="widget-heading">
+                Outbound Bank Payments
+            </p>
+        </div>
+        <div class="item item4">
+            <p class="widget-heading">
+                Tasks Completed
+            </p>
+        </div>
+        <div class="item item5">
+            <p class="widget-heading">
+                Funds Held with LPs
+            </p>
+        </div>
     </div>
     
 </div>
