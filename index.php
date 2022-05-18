@@ -73,15 +73,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             }
 
         } else {
-            $error = "Please Try Again";
+            $error = "Incorrect Login Details";
         }
     }
 }
 
-    
-// Store username and password in vars
-// $username = $_POST["username"];
-// $password = $_POST["password"];
 ?>
 
 <!--  Div -->
