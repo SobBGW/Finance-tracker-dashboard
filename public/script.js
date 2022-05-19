@@ -97,9 +97,7 @@ function getDailyRecon(){
 
     })
 }
-$(".create-recon-button").click(() =>{
-    console.log("gang")
-})
+
 
 function getOutstandingInvoices(){
     $.get("http://localhost/finance-tracker-dashboard/api.php?outstanding_invoices=1", (data, status) => {

@@ -34,6 +34,7 @@ if(isset($_GET["daily_recon"]) && $_GET["daily_recon"] !== ""){
 // ENDPOINT 2 - SET APPROVAL TO TRUE(1) - COME BACK TO
 elseif(isset($_GET["set_approval_daily_recon"]) && ($_GET["set_approval_daily_recon"] !== "")){
     // Run Update query to set relevent 
+    header("location: finance-dashboard.php");
 }
 
 // ENPOINT 3 - GET OUTSTANDING INVOICES

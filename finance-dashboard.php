@@ -69,10 +69,10 @@ if(!isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] !== true){
             </div>
 
             <div class="daily-recon-buttons">
-                <button class="daily-recon-button recon-button" value="create-recon" id="create-recon-button">Create Recon</button>
-                <button class="daily-recon-button recon-button" value="finance1-review" id="finance-1-button">Finance 1 Review</button>
-                <button class="daily-recon-button recon-button" value="finance2-review" id="finance-2-button">Finance 2 Review</button>
-                <button class="daily-recon-button recon-button" value="director-approval" id="director-button">Director Review</button>
+                <button class="daily-recon-button" value="create-recon" id="create-recon-button">Create Recon</button>
+                <button class="daily-recon-button" value="finance1-review" id="finance-1-button">Finance 1 Review</button>
+                <button class="daily-recon-button" value="finance2-review" id="finance-2-button">Finance 2 Review</button>
+                <button class="daily-recon-button" value="director-approval" id="director-button">Director Review</button>
             </div>
         </div>
 
