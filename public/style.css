@@ -182,6 +182,14 @@ div.content {
     padding: 10px;
     margin-bottom: 15px;
 }
+.daily-recon-buttons{
+    text-align: center;
+}
+.daily-recon-button{
+    padding: 5px 40px;
+    border: none;
+    border-radius: 5px;
+}
 /* Item2 */
 .outstanding-invoices-head tr th {
    padding: 5px 50px 5px 0px;

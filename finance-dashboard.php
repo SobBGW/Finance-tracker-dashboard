@@ -18,42 +18,61 @@ if(!isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] !== true){
     <div class="wrapper">
         <!-- title 1 -->
         <div class="item item1">
+
             <p class="widget-heading">
                 Daily Reconciliation
             </p>
+
             <!-- Heading for recons boxes -->
             <div class="recon-box">
-            <div>Stage</div>
-            <div>Approval</div>
-            <div>Date</div>
+
+                <div>Stage</div>
+                <div>Status</div>
+                <div>Time</div>
+
             </div>
 
             <!-- Recon Created -->
             <div class="recon-list">
-            <div>Reconciliation Created</div>
-            <div>Approval</div>
-            <div>Date</div>
+
+                <div class="rec-created">Reconciliation Created</div>
+                <div class="rec-approved">Approval</div>
+                <div class="rec-approve-date">Date</div>
+
             </div>
 
             <!-- Finance 1 Reviewed -->
             <div class="recon-list">
-            <div>Finance 1 Reviewed</div>
-            <div>Approval</div>
-            <div>Date</div>
+
+                <div class="fin1">Finance 1 Reviewed</div>
+                <div class="fin1-approved">Approval</div>
+                <div class="fin1-date">Date</div>
+
             </div>
 
             <!-- Finance 2 Reviewed -->
             <div class="recon-list">
-            <div>Finance 2 Reviewed</div>
-            <div>Approval</div>
-            <div>Date</div>
+
+                <div class="fin2">Finance 2 Reviewed</div>
+                <div class="fin2-approved">Approval</div>
+                <div class="fin2-date">Date</div>
+
             </div>
 
             <!-- Director Approval -->
             <div class="recon-list">
-            <div>Director Approval</div>
-            <div>Approval</div>
-            <div>Date</div>
+
+                <div class="director">Director Approval</div>
+                <div class="director-approval">Approval</div>
+                <div class="director-date">Date</div>
+
+            </div>
+
+            <div class="daily-recon-buttons">
+                <button class="daily-recon-button" id="create-recon-button">Create Recon</button>
+                <button class="daily-recon-button" id="finance-1-button">Finance 1 Review</button>
+                <button class="daily-recon-button" id="finance-2-button">Finance 2 Review</button>
+                <button class="daily-recon-button" id="director-button">Director Review</button>
             </div>
         </div>
 

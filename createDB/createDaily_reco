@@ -5,4 +5,5 @@ CREATE TABLE `finance_test`.`daily_recon` ( `id` INT NOT NULL AUTO_INCREMENT , `
 -- Insert Statement
 INSERT INTO `daily_recon` (`id`, `created`, `reviewed_1`, `reviewed_2`, `aprroved`, `created_time`, `reviewed_1_time`, `reviewed_2_time`, `approved_time`) VALUES (NULL, '0', '0', '0', '0', '0000-00-00 00:00:00.000000', '0000-00-00 00:00:00.000000', '0000-00-00 00:00:00.000000', '0000-00-00 00:00:00.000000');
 
+INSERT INTO `daily_recon` (`id`, `created`, `reviewed_1`, `reviewed_2`, `aprroved`, `created_time`, `reviewed_1_time`, `reviewed_2_time`, `approved_time`) VALUES (NULL, '0', '0', '0', '0', '00:00:00', '00:00:00', '00:00:00', '00:00:00');
 -- Update statement

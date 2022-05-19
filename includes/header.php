@@ -7,6 +7,9 @@
     <title>Finance Tracker Dashboard</title>
     <!-- stylesheet -->
     <link rel="stylesheet" href="./public/style.css">
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./public/script.js"></script>
 
     <!-- Show only if logged in -->
     <!-- Side Navigation Bar -->
