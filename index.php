@@ -46,8 +46,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         // Check a single result is returned
         if($result -> num_rows === 1){
             $row = $result -> fetch_array();
+
             // Get hashed password
             $hashed_password = $row["password"];
+
             // Compare password
             if(password_verify($password, $hashed_password)){
                 // Set Session variables
@@ -56,6 +58,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 $_SESSION["role"] = $row["role"];
                 $_SESSION["user_group"] = $row["user_group"];
 
+                
             }
 
         } else {
