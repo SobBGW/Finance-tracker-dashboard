@@ -110,12 +110,38 @@ if(!isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] !== true){
             <p class="widget-heading">
                 Outbound Bank Payments
             </p>
+
+            <table class="outstanding-invoices">
+                <thead class="outstanding-invoices-head">
+                    <tr>
+                        <th>Entity</th>
+                        <th>Transaction Type</th>
+                        <th>Amount</th>
+                        <th>Date Submitted</th>
+                        <th>Urgency</th>
+                        <!-- <th>PDF</th> -->
+                    </tr>
+                </thead>
+                <tbody class="outbound-bank-payments-body">
+                    <!-- <tr>
+                        <td>blackwell</td>
+                        <td>blackwell</td>
+                        <td>blackwell</td>
+                        <td>blackwell</td>
+                        <td>blackwell</td>
+                        <td>blackwell</td>
+                    </tr> -->
+                </tbody>
+            </table>
+
         </div>
+
         <div class="item item4">
             <p class="widget-heading">
                 Tasks Completed
             </p>
         </div>
+
         <div class="item item5">
             <p class="widget-heading">
                 Funds Held with LPs

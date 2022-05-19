@@ -97,6 +97,9 @@ function getDailyRecon(){
 
     })
 }
+$(".create-recon-button").click(() =>{
+    console.log("gang")
+})
 
 function getOutstandingInvoices(){
     $.get("http://localhost/finance-tracker-dashboard/api.php?outstanding_invoices=1", (data, status) => {
@@ -104,9 +107,22 @@ function getOutstandingInvoices(){
 
         data.forEach(element => {
             console.log(element)
+            $(".outstanding-invoices-body").append("");
         });
     })
 }
 
+function outboundBankPayments(){
+    $.get("http://localhost/finance-tracker-dashboard/api.php?outbound_bank_payments=1", (data, status) => {
+        console.log(data)
+        $(".outbound-bank-payments-body").empty()
+        data.forEach(element => {
+            $(".outbound-bank-payments-body").append(`<tr><td>${element["entity"]}<td> <td>${element["transaction_type"]}<td> <td>${element["amount"]}<td> <td>${element["date_submitted"]}<td>` );
+
+        })
+    })
+}
+
 getDailyRecon();
-getOutstandingInvoices()
+// getOutstandingInvoices()
+outboundBankPayments()

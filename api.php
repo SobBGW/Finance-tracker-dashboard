@@ -64,6 +64,19 @@ elseif(isset($_GET["add_outstanding_invoice"])){
 // ENDPOINT 5 - GET OUTBOUND BANK PAYMENTS
 elseif(isset($_GET["outbound_bank_payments"]) && $_GET["outbound_bank_payments"] !== ""){
     // Run Query to get the items in outbound bank payments table
+    $sql = "SELECT * FROM `outbound_payments`;";
+    $result = $conn -> query($sql);
+    
+    if($result -> num_rows > 0){
+        while($row = $result -> fetch_assoc()){
+            $rows[] = $row;
+        }
+    }
+    else {
+        header("HTTP/1.1 500 Some Went Wrong");
+    }
+
+    echo json_encode($rows);
 }
 // ENPOINT 6 - APPROVE OUTBOUND BANK PAYMENT - COME BACK TO
 elseif(isset($_GET["set_approval_outbound_bank_payment"]) && $_GET["set_approval_outbound_bank_payment"] !== ""){
