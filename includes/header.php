@@ -20,7 +20,7 @@
       <a href="./finance-dashboard.php">Finance Dashboard</a>
       <a href="#contact">Dashboard 3</a>
       <a href="#about">Dashboard 4</a>
-      <a href="#about">Logout</a>
+      <a href="./logout.php">Logout</a>
     </div>
     
   <?php } ?>

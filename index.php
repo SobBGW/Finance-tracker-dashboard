@@ -8,8 +8,6 @@
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     // CHANGE LOCATION OF REDIRECT
     header("location: welcome.php");
-
-    echo $_SESSION["loggedin"];
 }
 ?>
 
