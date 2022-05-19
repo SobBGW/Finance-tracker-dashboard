@@ -1,6 +1,4 @@
 <?php include './includes/header.php'; ?>
-
-<!-- Code Below not working correctly -->
 <?php 
 // session_start();
 

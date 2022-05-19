@@ -1,0 +1,8 @@
+
+
+CREATE TABLE `finance_test`.`daily_recon` ( `id` INT NOT NULL AUTO_INCREMENT , `created` BOOLEAN NOT NULL DEFAULT FALSE , `reviewed_1` BOOLEAN NOT NULL DEFAULT FALSE , `reviewed_2` BOOLEAN NOT NULL DEFAULT FALSE , `aprroved` BOOLEAN NOT NULL DEFAULT FALSE , `created_time` TIMESTAMP on update CURRENT_TIMESTAMP NOT NULL DEFAULT 0 , `reviewed_1_time` TIMESTAMP NOT NULL , `reviewed_2_time` TIMESTAMP on update CURRENT_TIMESTAMP NOT NULL DEFAULT 0 , `approved_time` TIMESTAMP on update CURRENT_TIMESTAMP NOT NULL DEFAULT 0 , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+-- Insert Statement
+INSERT INTO `daily_recon` (`id`, `created`, `reviewed_1`, `reviewed_2`, `aprroved`, `created_time`, `reviewed_1_time`, `reviewed_2_time`, `approved_time`) VALUES (NULL, '0', '0', '0', '0', '0000-00-00 00:00:00.000000', '0000-00-00 00:00:00.000000', '0000-00-00 00:00:00.000000', '0000-00-00 00:00:00.000000');
+
+-- Update statement
