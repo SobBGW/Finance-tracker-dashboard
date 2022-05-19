@@ -98,5 +98,15 @@ function getDailyRecon(){
     })
 }
 
+function getOutstandingInvoices(){
+    $.get("http://localhost/finance-tracker-dashboard/api.php?outstanding_invoices=1", (data, status) => {
+        console.log(data[0])
+
+        data.forEach(element => {
+            console.log(element)
+        });
+    })
+}
 
 getDailyRecon();
+getOutstandingInvoices()

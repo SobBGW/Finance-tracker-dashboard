@@ -39,7 +39,22 @@ elseif(isset($_GET["set_approval_daily_recon"]) && ($_GET["set_approval_daily_re
 // ENPOINT 3 - GET OUTSTANDING INVOICES
 elseif(isset($_GET["outstanding_invoices"]) && $_GET["outstanding_invoices"] !== ""){
     // Run Query to get the items in outstanding invoices table
-    echo "get outstanding bank payments";
+
+    $sql = "SELECT * FROM `outbound_payments`;";
+    $result = $conn -> query($sql);
+    
+    if($result -> num_rows > 0){
+        while($row = $result -> fetch_assoc()){
+            $rows[] = $row;
+        }
+    }
+    else {
+        header("HTTP/1.1 500 Some Went Wrong");
+    }
+
+    echo json_encode($rows);
+
+
 }
 // ENDPOINT 4 - ADD OUTSTANDING INVOICE - COME BACK TO
 elseif(isset($_GET["add_outstanding_invoice"])){
