@@ -7,8 +7,13 @@ if($conn -> connect_error) {
     die("connection failed:" . $conn -> connect_error);
 }
 
+// Set password and hash it
+// $password = "hello12345";
+// $hashed_password = passsword_hash($password, PASSWORD_DEFAULT);
+
+
 // SQL Statement
-$sql = "INSERT INTO users (firstname, lastname, username, password, role, user_group) VALUES ('john', 'ham', 'john.ham@gmail.com', 'hejgajshjksadj', 'member', 'finance')";
+$sql = "INSERT INTO users (firstname, lastname, username, password, role, user_group) VALUES ('john', 'ham', 'test.user', 'hello1234', 'member', 'finance')";
 
 // Execute sql statement
 if($conn -> query($sql) === TRUE) {
