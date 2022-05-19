@@ -60,10 +60,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 $_SESSION["user_group"] = $row["user_group"];
 
                 // TEST REMOVE LATER
-                echo $_SESSION["loggedin"];
-                echo $_SESSION["name"];
-                echo $_SESSION["role"];
-                echo $_SESSION["user_group"];
+                // echo $_SESSION["loggedin"];
+                // echo $_SESSION["name"];
+                // echo $_SESSION["role"];
+                // echo $_SESSION["user_group"];
 
                 // Navigate to welcome.php
                 header("location: welcome.php");
