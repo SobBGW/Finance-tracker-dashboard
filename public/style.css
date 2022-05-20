@@ -191,14 +191,27 @@ div.content {
     border-radius: 5px;
 }
 /* Item2 */
-.outstanding-invoices-head tr th {
-   padding: 5px 50px 5px 0px;
-   color: var(--Grey-text-colour);
-   font-weight: 500;
-}
-.outstanding-invoices-body{
+.uk-table, .cy-table{
+    height: 160px;
+    /* border: 1px white solid; */
     overflow-y: scroll;
+    margin-bottom: 10px;
 }
-.outstanding-invoices-body tr td {
-    border-bottom: 1px white solid;
+.outstanding-invoices-table{
+    row-gap: 5px;
+    text-align: center;
+}
+.outstanding-invoices-head tr th{
+    padding-right: 15px;
+}
+.outstanding-invoices-body tr td{
+    padding-right: 15px;
+}
+.add-invoice-box{
+    margin-top: 10px;
+    display: inline-block;
+}
+
+#entity-selection, #name-input, #amount-input, #date-input, #urgency-selection, #PDF-upload{
+    border: none;
 }

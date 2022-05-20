@@ -9,14 +9,12 @@ if(!isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] !== true){
 }
 
 ?>
-
-
 <div class="content">
     <p class="dashboard-heading"><?php echo $_SESSION["name"] ?> - <?php echo $_SESSION["role"] ?></p>
 
     <!-- Check user role and load relevent html -->
     <div class="wrapper">
-        <!-- title 1 -->
+        <!-- Daily Recon Tile-->
         <div class="item item1">
 
             <p class="widget-heading">
@@ -68,6 +66,7 @@ if(!isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] !== true){
 
             </div>
 
+            <!-- Daily Recon Buttons -->
             <div class="daily-recon-buttons">
                 <a href="http://localhost/finance-tracker-dashboard/api.php?set_approval_daily_recon=1"><button class="daily-recon-button" value="create-recon" id="create-recon-button">Create Recon</button></a>
                 <a href="http://localhost/finance-tracker-dashboard/api.php?set_approval_daily_recon=2"><button class="daily-recon-button" value="finance1-review" id="finance-1-button">Finance 1 Review</button></a>
@@ -77,33 +76,204 @@ if(!isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] !== true){
         </div>
 
         
-        <!-- title 2 -->
+        <!-- Outstanding Invoices - Tile -->
         <div class="item item2">
+
             <p class="widget-heading">
                 Outstanding Invoices
             </p>
-            <table class="outstanding-invoices">
-                <thead class="outstanding-invoices-head">
+            
+            <!-- div containing uk table -->
+            <div class="uk-table">
+                <table class="outstanding-invoices-table">
+                    <thead class="outstanding-invoices-head">
+                        <tr>
+                            <th>Entity</th>
+                            <th>Name</th>
+                            <th>Amount</th>
+                            <th>Date Due</th>
+                            <th>Urgency</th>
+                            <th>PDF</th>
+                            <th> </th>
+                        </tr>
+
+                    </thead>
+                    <tbody class="outstanding-invoices-body">
+
                     <tr>
-                        <th>Entity</th>
-                        <th>Name</th>
-                        <th>Amount</th>
-                        <th>Date Due</th>
-                        <th>Urgency</th>
-                        <th>PDF</th>
+                        <td>UK</td>
+                        <td>TFG</td>
+                        <td>788241</td>
+                        <td>2022-01-21</td>
+                        <td>High</td>
+                        <td>view</td>
+                        <td><button>Paid</button></td>
+
                     </tr>
-                </thead>
-                <tbody class="outstanding-invoices-body">
+
                     <tr>
-                        <td>blackwell</td>
-                        <td>blackwell</td>
-                        <td>blackwell</td>
-                        <td>blackwell</td>
-                        <td>blackwell</td>
-                        <td>blackwell</td>
+                        <td>UK</td>
+                        <td>TFG</td>
+                        <td>788241</td>
+                        <td>2022-01-21</td>
+                        <td>High</td>
+                        <td>view</td>
+                        <td><button>Paid</button></td>
+
                     </tr>
-                </tbody>
-            </table>
+
+                    <tr>
+                        <td>UK</td>
+                        <td>TFG</td>
+                        <td>788241</td>
+                        <td>2022-01-21</td>
+                        <td>High</td>
+                        <td>view</td>
+                        <td><button>Paid</button></td>
+
+                    </tr>
+
+                    <tr>
+                        <td>UK</td>
+                        <td>TFG</td>
+                        <td>788241</td>
+                        <td>2022-01-21</td>
+                        <td>High</td>
+                        <td>view</td>
+                        <td><button>Paid</button></td>
+
+                    </tr>
+
+                    <tr>
+                        <td>UK</td>
+                        <td>TFG</td>
+                        <td>788241</td>
+                        <td>2022-01-21</td>
+                        <td>High</td>
+                        <td>view</td>
+                        <td><button>Paid</button></td>
+
+                    </tr>
+
+                    <tr>
+                        <td>UK</td>
+                        <td>TFG</td>
+                        <td>788241</td>
+                        <td>2022-01-21</td>
+                        <td>High</td>
+                        <td>view</td>
+                        <td><button>Paid</button></td>
+
+                    </tr>
+
+                    <tr>
+                        <td>UK</td>
+                        <td>TFG</td>
+                        <td>788241</td>
+                        <td>2022-01-21</td>
+                        <td>High</td>
+                        <td>view</td>
+                        <td><button>Paid</button></td>
+
+                    </tr>
+
+
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- div containing cy table -->
+            <div class="cy-table">
+            <table class="outstanding-invoices-table">
+                    <thead class="outstanding-invoices-head">
+                        <tr>
+                            <th>Entity</th>
+                            <th>Name</th>
+                            <th>Amount</th>
+                            <th>Date Due</th>
+                            <th>Urgency</th>
+                            <th>PDF</th>
+                            <th> </th>
+                        </tr>
+
+                    </thead>
+                    <tbody class="outstanding-invoices-body">
+
+                   <tr>
+                        <td>CY</td>
+                        <td>TFG</td>
+                        <td>788241</td>
+                        <td>2022-01-21</td>
+                        <td>High</td>
+                        <td>view</td>
+                        <td><button>Paid</button></td>
+
+                    </tr>
+
+                    <tr>
+                        <td>CY</td>
+                        <td>TFG</td>
+                        <td>788241</td>
+                        <td>2022-01-21</td>
+                        <td>High</td>
+                        <td>view</td>
+                        <td><button>Paid</button></td>
+
+                    </tr>
+
+                    <tr>
+                        <td>CY</td>
+                        <td>TFG</td>
+                        <td>788241</td>
+                        <td>2022-01-21</td>
+                        <td>High</td>
+                        <td>view</td>
+                        <td><button>Paid</button></td>
+
+                    </tr>
+
+                    <tr>
+                        <td>CY</td>
+                        <td>TFG</td>
+                        <td>788241</td>
+                        <td>2022-01-21</td>
+                        <td>High</td>
+                        <td>view</td>
+                        <td><button>Paid</button></td>
+
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Add a new  -->
+
+            <div class="add-invoice-box">
+
+                <select name="entity-selection" id="entity-selection">
+                    <option value="UK">UK</option>
+                    <option value="BHS">BHS</option>
+                </select>
+
+                <input type="text" name="name-input" id="name-input" placeholder="Name of invoice">
+
+                <input type="number" name="amount-input" id="amount-input" placeholder="1000">
+
+                <input type="text" name="date-input" id="date-input" placeholder="YYYY-MM-DD">
+
+                <select name="urgency-selection" id="urgency-selection">
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                </select>
+
+                <input type="file" name="PDF-upload" id="PDF-upload">
+
+                <button>Submit</button>
+
+
+            </div>
+
         </div>
 
         <div class="item item3">
