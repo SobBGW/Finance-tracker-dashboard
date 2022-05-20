@@ -45,19 +45,41 @@ elseif(isset($_GET["set_approval_daily_recon"]) && ($_GET["set_approval_daily_re
 
         header("location:fiance-dashboard.php");
 
-        // echo $time;
-        // echo $sql;
-
-        
-
     }elseif($_GET["set_approval_daily_recon"] == "2"){
+
+        // Get Time
+        $time = date("h:i:s");
+        // Construct sql query
+        $sql = "UPDATE daily_recon SET reviewed_1 = '1', reviewed_1_time = '$time' WHERE id = 1";
+        // Run Query
+        $result = $conn -> query($sql);
+
+        header("location:fiance-dashboard.php");
 
     }elseif($_GET["set_approval_daily_recon"] == "3"){
 
+        // Get Time
+        $time = date("h:i:s");
+        // Construct sql query
+        $sql = "UPDATE daily_recon SET reviewed_2 = '1', reviewed_2_time = '$time' WHERE id = 1";
+         // Run Query
+        $result = $conn -> query($sql);
+
+        header("location:fiance-dashboard.php");
+
     }elseif($_GET["set_approval_daily_recon"] == "4"){
 
-    }else{
+        // Get Time
+        $time = date("h:i:s");
+        // Construct sql query
+        $sql = "UPDATE daily_recon SET aprroved = '1', approved_time = '$time' WHERE id = 1";
+        // Run Query
+        $result = $conn -> query($sql);
 
+        header("location:fiance-dashboard.php");
+
+    }else{
+        header("location: finance-dashboard.php");
     }
     // header("location: finance-dashboard.php");
 }

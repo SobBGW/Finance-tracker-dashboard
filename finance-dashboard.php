@@ -70,9 +70,9 @@ if(!isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] !== true){
 
             <div class="daily-recon-buttons">
                 <a href="http://localhost/finance-tracker-dashboard/api.php?set_approval_daily_recon=1"><button class="daily-recon-button" value="create-recon" id="create-recon-button">Create Recon</button></a>
-                <button class="daily-recon-button" value="finance1-review" id="finance-1-button">Finance 1 Review</button>
-                <button class="daily-recon-button" value="finance2-review" id="finance-2-button">Finance 2 Review</button>
-                <button class="daily-recon-button" value="director-approval" id="director-button">Director Review</button>
+                <a href="http://localhost/finance-tracker-dashboard/api.php?set_approval_daily_recon=2"><button class="daily-recon-button" value="finance1-review" id="finance-1-button">Finance 1 Review</button></a>
+                <a href="http://localhost/finance-tracker-dashboard/api.php?set_approval_daily_recon=3"><button class="daily-recon-button" value="finance2-review" id="finance-2-button">Finance 2 Review</button></a>
+                <a href="http://localhost/finance-tracker-dashboard/api.php?set_approval_daily_recon=4"><button class="daily-recon-button" value="director-approval" id="director-button">Director Review</button></a>
             </div>
         </div>
 
