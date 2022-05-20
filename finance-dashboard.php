@@ -252,7 +252,7 @@ if(!isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] !== true){
 
                 <select name="entity-selection" id="entity-selection">
                     <option value="UK">UK</option>
-                    <option value="BHS">BHS</option>
+                    <option value="CY">CY</option>
                 </select>
 
                 <input type="text" name="name-input" id="name-input" placeholder="Name of invoice">
@@ -281,28 +281,16 @@ if(!isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] !== true){
                 Outbound Bank Payments
             </p>
 
-            <table class="outstanding-invoices">
-                <thead class="outstanding-invoices-head">
-                    <tr>
-                        <th>Entity</th>
-                        <th>Transaction Type</th>
-                        <th>Amount</th>
-                        <th>Date Submitted</th>
-                        <th>Urgency</th>
-                        <!-- <th>PDF</th> -->
-                    </tr>
-                </thead>
-                <tbody class="outbound-bank-payments-body">
-                    <!-- <tr>
-                        <td>blackwell</td>
-                        <td>blackwell</td>
-                        <td>blackwell</td>
-                        <td>blackwell</td>
-                        <td>blackwell</td>
-                        <td>blackwell</td>
-                    </tr> -->
-                </tbody>
-            </table>
+            <div class="uk-payments">
+                <table class="outbound-payments">
+                    <thead class="outbound-payments-head">
+
+                    </thead>
+                    <tbody class="outbound-payments-body">
+                        
+                    </tbody>
+                </table>
+            </div>
 
         </div>
 
