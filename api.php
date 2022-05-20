@@ -34,7 +34,32 @@ if(isset($_GET["daily_recon"]) && $_GET["daily_recon"] !== ""){
 // ENDPOINT 2 - SET APPROVAL TO TRUE(1) - COME BACK TO
 elseif(isset($_GET["set_approval_daily_recon"]) && ($_GET["set_approval_daily_recon"] !== "")){
     // Run Update query to set relevent 
-    header("location: finance-dashboard.php");
+    if($_GET["set_approval_daily_recon"] == "1"){
+
+        // Get Time
+        $time = date("h:i:s");
+        // Construct sql query
+        $sql = "UPDATE daily_recon SET created = '1', created_time = '$time' WHERE id = 1";
+        // Run Query
+        $result = $conn -> query($sql);
+
+        header("location:fiance-dashboard.php");
+
+        // echo $time;
+        // echo $sql;
+
+        
+
+    }elseif($_GET["set_approval_daily_recon"] == "2"){
+
+    }elseif($_GET["set_approval_daily_recon"] == "3"){
+
+    }elseif($_GET["set_approval_daily_recon"] == "4"){
+
+    }else{
+
+    }
+    // header("location: finance-dashboard.php");
 }
 
 // ENPOINT 3 - GET OUTSTANDING INVOICES
