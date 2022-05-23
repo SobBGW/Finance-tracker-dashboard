@@ -31,7 +31,7 @@ if(isset($_GET["daily_recon"]) && $_GET["daily_recon"] !== ""){
 
     echo json_encode($rows);
 }
-// ENDPOINT 2 - SET APPROVAL TO TRUE(1) - COME BACK TO
+// ENDPOINT 2 - SET APPROVAL TO TRUE(1)
 elseif(isset($_GET["set_approval_daily_recon"]) && ($_GET["set_approval_daily_recon"] !== "")){
     // Run Update query to set relevent 
     if($_GET["set_approval_daily_recon"] == "1"){
@@ -187,22 +187,62 @@ elseif(isset($_POST["entity-selection-outbound"]) && $_POST["entity-selection-ou
         header("location: finance-dashboard.php");
     }
 
-    // echo json_encode($_POST["entity-selection-outbound"] . $_POST["transaction-type-input"] . $_POST["amount-input-outbound"]);
 }
 
 // ENDPOINT 7 - ADD OUTBOUND BANK PAYMENT - COME BACK TO 
-elseif(isset($_GET["add_outbound_bank_payment"]) && $_GET["add_outbound_bank_payment"] !== ""){
-    // Run Query to add items in outstanding outbound bank payments table
-}
+// elseif(isset($_GET["add_outbound_bank_payment"]) && $_GET["add_outbound_bank_payment"] !== ""){
+//     // Run Query to add items in outstanding outbound bank payments table
+// }
 
 // ENDPOINT 8 - GET TASKS
 elseif(isset($_GET["tasks"]) && $_GET["tasks"] !== ""){
+
+    $sql = "SELECT * FROM `daily_tasks` WHERE due_date = CURRENT_DATE;";
+    $result = $conn -> query($sql);
+
+    if($result -> num_rows > 0){
+        while($row = $result -> fetch_assoc()){
+            $rows[] = $row;
+        }
+    }
+    else {
+        header("HTTP/1.1 500 Some Went Wrong");
+    }
+
+    echo json_encode($rows);
+    
+}
+// ENDPOINT 9 FINISH TASK
+elseif(isset($_GET["complete_task"]) && $_GET["complete_task"] !== ""){
+
+    $id = $_GET["complete_task"];
+    $sql = "UPDATE daily_tasks SET completed = '1' WHERE id = $id";
+    $result = $conn -> query($sql);
+    
+    if ($conn->query($sql) === TRUE) {
+        header("location: finance-dashboard.php");
+    } else {
+        // header("location: finance-dashboard.php");
+        header("location: finance-dashboard.php");
+    }
+
     
 }
 
-// ENDPOINT 9 - ADD TASKS - COME BACK TO
-elseif(isset($_GET["add_task"]) && $_GET["add_task"] !== ""){
+// ENDPOINT 10 - ADD TASKS - COME BACK TO
+elseif(isset($_POST["task-input"]) && $_POST["task-input"] !== "" && isset($_POST["assignedto-selection"]) && $_POST["assignedto-selection"] !== "" ){
     // Run Query to add task to task list
+
+    $task = $_POST["task-input"];
+    $assigned_to = $_POST["assignedto-selection"];
+
+    $sql = "INSERT INTO `daily_tasks` (`id`, `task`, `assigned_to`, `due_date`, `completed`) VALUES (NULL, '$task', '$assigned_to', current_timestamp(), '0')";
+
+    if ($conn->query($sql) === TRUE) {
+        header("location: finance-dashboard.php");
+    } else {
+        header("location: finance-dashboard.php");
+    }
 }
 
 else {

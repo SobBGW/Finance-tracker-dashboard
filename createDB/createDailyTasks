@@ -1,0 +1,6 @@
+CREATE TABLE `finance_test`. ( `id` INT NOT NULL AUTO_INCREMENT , `task` VARCHAR(250) NOT NULL , `assigned_to` VARCHAR(50) NOT NULL , `completed` BOOLEAN NOT NULL DEFAULT FALSE , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+INSERT INTO `daily_tasks` (`id`, `task`, `assigned_to`, `completed`) VALUES (NULL, 'Add Entries', 'Brian', '0');
+
+
+CREATE TABLE `finance_test`.`daily_tasks` ( `id` INT NOT NULL AUTO_INCREMENT , `task` VARCHAR(250) NOT NULL , `assigned_to` VARCHAR(50) NOT NULL , `due_date` DATE NOT NULL , `completed` BOOLEAN NOT NULL DEFAULT FALSE , PRIMARY KEY (`id`)) ENGINE = InnoDB;

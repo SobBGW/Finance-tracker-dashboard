@@ -143,20 +143,21 @@ function outboundBankPaymentscy(){
 }
 
 function dailyTasks(){
-    $.get("http://localhost/finance-tracker-dashboard/api.php?outbound_bank_payments=2", (data, status) => {
+    $.get("http://localhost/finance-tracker-dashboard/api.php?tasks=1", (data, status) => {
         console.log(data)
-        $(".outbound-cy").empty()
+        $(".daily-tasks-body").empty()
         data.forEach(element => {
 
-            if(element["approved"] == "0"){
-                $(".outbound-cy").append(`<tr> <td>${element["entity"]}</td> <td>${element["transaction_type"]}</td> <td>${element["amount"]}</td> <td>${element["time_submitted"]}</td> <td> <div class='dot-red'></div> </td> <td><a href='http://localhost/finance-tracker-dashboard/api.php?set_approval_outbound_bank_payment=${element["id"]}'><button class='auth-button'>Authorise</button></a></td> </tr>`)
+            if(element["completed"] == "0"){
+                $(".daily-tasks-body").append(`<tr> <td>${element["task"]}</td> <td>${element["assigned_to"]}</td> <td>${element["due_date"]}</td> <td><div class='dot-red'></div></td> <td><a href="http://localhost/finance-tracker-dashboard/api.php?complete_task=${element["id"]}"><button class='auth-button'>Complete</button></a></td> </tr>`)
             } else{
-                $(".outbound-cy").append(`<tr> <td>${element["entity"]}</td> <td>${element["transaction_type"]}</td> <td>${element["amount"]}</td> <td>${element["time_submitted"]}</td> <td> <div class='dot-green'></div> </td> </tr>`)
+                $(".daily-tasks-body").append(`<tr> <td>${element["task"]}</td> <td>${element["assigned_to"]}</td> <td>${element["due_date"]}</td> <td><div class='dot-green'></div></td></tr>`)
             }
 
         })
     })
 }
+
 
 $(document).ready(function() {
     getDailyRecon();
@@ -166,6 +167,8 @@ $(document).ready(function() {
     outboundBankPaymentsuk()
 
     outboundBankPaymentscy()
+
+    dailyTasks()
 })
 
 

@@ -386,6 +386,25 @@ if(!isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] !== true){
                     </tbody>
                 </table>
             </div>
+
+            <div class="add-task-box">
+
+                <form action="api.php" method="post">
+                    <input type="text" name="task-input" id="task-input" placeholder="Task Name">
+
+                    <select name="assignedto-selection" id="assignedto-selection">
+                        <option value="Brian">Brian</option>
+                        <option value="Antony">Antony</option>
+                        <option value="Monika">Monika</option>
+                    </select>
+
+                    <button type="submit">Submit</button>
+
+                </form>
+
+                
+
+            </div>
         </div>
 
         <div class="item item5">
