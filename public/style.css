@@ -215,3 +215,65 @@ div.content {
 #entity-selection, #name-input, #amount-input, #date-input, #urgency-selection, #PDF-upload{
     border: none;
 }
+/* item3 */
+.uk-payments, .cy-payments {
+    height: 160px;
+    overflow-y: scroll;
+    margin-bottom: 10px;
+}
+
+.outbound-payments{
+    row-gap: 5px;
+}
+.outbound-payments-head tr th{
+    padding-right: 15px;
+}
+.outbound-payments-body tr td{
+    padding-right: 15px;
+}
+.add-outbound-payment-box{
+    margin-top: 10px;
+    display: inline-block;
+}
+
+/* DOT */
+.dot-red {
+    height: 25px;
+    width: 25px;
+    background-color: rgb(217, 45, 45);
+    border-radius: 50%;
+    display: inline-block;
+}
+.dot-green{
+    height: 25px;
+    width: 25px;
+    background-color: rgb(12, 214, 56);
+    border-radius: 50%;
+    display: inline-block;
+}
+.auth-button {
+    padding: 7px 20px;
+    border: none;
+    background-color: rgb(12, 214, 56);
+    border-radius: 5px;
+    color: #fff;
+}
+
+/* item4 */
+.tasks-table{
+    height: 160px;
+    /* border: 1px white solid; */
+    overflow-y: scroll;
+    margin-bottom: 10px;
+}
+.daily-tasks-table{
+    row-gap: 5px;
+}
+.daily-tasks-head tr th {
+    padding-right: 20px;
+}
+.daily-tasks-body {
+    padding-right: 20px;
+}
+
+

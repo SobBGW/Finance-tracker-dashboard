@@ -284,12 +284,76 @@ if(!isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] !== true){
             <div class="uk-payments">
                 <table class="outbound-payments">
                     <thead class="outbound-payments-head">
-
+                        <th>Entity</th>
+                        <th>Transaction Type</th>
+                        <th>Amount</th>
+                        <th>Datetime Submitted</th>
+                        <!-- <th>Time</th> -->
+                        <th>Authorised</th>
+                        <th> </th>
                     </thead>
-                    <tbody class="outbound-payments-body">
+                    <tbody class="outbound-payments-body outbound-uk">
+
+                        <!-- <tr>
+                            <td>UK</td>
+                            <td>Withdrawal</td>
+                            <td>1388</td>
+                            <td>2022-06-21</td>
+                            <td>10:31:20</td>
+                            <td>Not Authorised</td>
+                            <td> <button>Authorise</button> </td>
+                        </tr> -->
                         
                     </tbody>
                 </table>
+            </div>
+
+            <div class="cy-payments">
+            <table class="outbound-payments">
+                    <thead class="outbound-payments-head">
+                        <th>Entity</th>
+                        <th>Transaction Type</th>
+                        <th>Amount</th>
+                        <th>Datetime Submitted</th>
+                        <th>Authorised</th>
+                        <th> </th>
+                    </thead>
+                    <tbody class="outbound-payments-body outbound-cy">
+
+                        <!-- <tr>
+                            <td>CY</td>
+                            <td>Withdrawal</td>
+                            <td>1388</td>
+                            <td>2022-06-21</td>
+                            <td>10:31:20</td>
+                            <td>Not Authorised</td>
+                            <td> <button>Authorise</button> </td>
+                        </tr> -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="add-outbound-payment-box">
+
+                <form action="api.php" method="post">
+
+                    <select name="entity-selection-outbound" id="entity-selection-outbound">
+                        <option value="UK">UK</option>
+                        <option value="BHS">BHS</option>
+                    </select>
+                    
+                    <input type="text" name="transaction-type-input" id="transaction-type-input" placeholder="Transaction Type">
+
+                    <input type="number" name="amount-input-outbound" id="amount-input-outbound" placeholder="10000">
+
+                    <!-- <input type="text" name="date-input-outbound" id="date-input-outbound" placeholder="2022-09-01"> -->
+
+                    <!-- <input type="text" name="time-input-outbound" id="time-input-outbound" placeholder="13:08:00"> -->
+
+                    <button type="submit">Submit</button>
+
+                </form>
+
             </div>
 
         </div>
@@ -298,6 +362,30 @@ if(!isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] !== true){
             <p class="widget-heading">
                 Tasks Completed
             </p>
+            <div class="tasks-table">
+                <table class="daily-tasks-table">
+                    <thead class="daily-tasks-head">
+                        <tr>
+                            <th>Task</th>
+                            <th>Assigned to</th>
+                            <th>Due Date</th>
+                            <th>Completed</th>
+                            <th> </th>
+                        </tr>
+                    </thead>
+                    <tbody class="daily-tasks-body">
+
+                        <!-- <tr>
+                            <td>Xero Entries</td>
+                            <td>Brian Tran</td>
+                            <td>2022-09-02</td>
+                            <td>Not</td>
+                            
+                        </tr> -->
+
+                    </tbody>
+                </table>
+            </div>
         </div>
 
         <div class="item item5">
