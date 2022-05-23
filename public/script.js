@@ -9,17 +9,17 @@ function getDailyRecon(){
             console.log("Not Yet Created")
 
             $(".rec-approved").empty();
-            $(".rec-approved").text("Not Created");
+            $(".rec-approved").append("<div class='dot-red'></div>");
 
             $(".rec-approve-date").empty();
-            $(".rec-approve-date").text("Not Created");
+            $(".rec-approve-date").append("<div class='dot-red'></div>");
 
         }
         else {
             console.log("Created")
 
             $(".rec-approved").empty();
-            $(".rec-approved").text("Approved");
+            $(".rec-approved").append("<div class='dot-green'></div>");
 
             $(".rec-approve-date").empty();
             $(".rec-approve-date").text(data[0]["created_time"]);
@@ -33,17 +33,17 @@ function getDailyRecon(){
             console.log("not yet reviewed by 1")
 
             $(".fin1-approved").empty();
-            $(".fin1-approved").text("Not Approved");
+            $(".fin1-approved").append("<div class='dot-red'></div>");
 
             $(".fin1-date").empty();
-            $(".fin1-date").text("Not Approved");
+            $(".fin1-date").append("<div class='dot-red'></div>");
 
         }
         else{
             console.log("Reviwed by reviewer 1")
 
             $(".fin1-approved").empty();
-            $(".fin1-approved").text("Approved");
+            $(".fin1-approved").append("<div class='dot-green'></div>");
 
             $(".fin1-date").empty();
             $(".fin1-date").text(data[0]["reviewed_1_time"]);
@@ -56,17 +56,17 @@ function getDailyRecon(){
             console.log("Not Approved")
 
             $(".fin2-approved").empty();
-            $(".fin2-approved").text("Not Approved");
+            $(".fin2-approved").append("<div class='dot-red'></div>");
 
             $(".fin2-date").empty();
-            $(".fin2-date").text("Not Approved");
+            $(".fin2-date").append("<div class='dot-red'></div>");
 
         }
         else{
             console.log("Approved")
 
             $(".fin2-approved").empty();
-            $(".fin2-approved").text("Approved");
+            $(".fin2-approved").append("<div class='dot-green'></div>");
 
             $(".fin2-date").empty();
             $(".fin2-date").text(data[0]["reviewed_2_time"]);
@@ -79,15 +79,15 @@ function getDailyRecon(){
             console.log("Not Approved");
 
             $(".director-approval").empty();
-            $(".director-approval").text("Not Approved")
+            $(".director-approval").append("<div class='dot-red'></div>");
 
             $(".director-date").empty();
-            $(".director-date").text("Not Approved")
+            $(".director-date").append("<div class='dot-red'></div>");
             
         }
         else{
             $(".director-approval").empty();
-            $(".director-approval").text("Approved")
+            $(".director-approval").append("<div class='dot-green'></div>");
 
             $(".director-date").empty();
             $(".director-date").text(data[0]["approved_time"]);
