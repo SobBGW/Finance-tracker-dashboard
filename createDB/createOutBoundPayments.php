@@ -36,3 +36,13 @@ CREATE TABLE `finance_test`.`outbound_bank_payments` ( `id` INT NOT NULL AUTO_IN
 
 INSERT INTO `outbound_payments` (`id`, `entity`, `transaction_type`, `amount`, `date_submitted`, `time_submitted`, `approved`) VALUES (NULL, 'uk', 'lol', '1000', current_timestamp(), current_timestamp(), '0');
  -->
+
+<!-- //sql statement to use
+ SELECT * FROM outbound_payments WHERE (approved = 0) OR ( approved = 1 AND date_submitted >= DATE_SUB(CURDATE(), INTERVAL 3 DAY)) ORDER BY date_submitted; -->
+
+
+ <!-- CY query -->
+ <!-- SELECT * FROM outbound_payments WHERE (entity = 'CY') AND ((approved = 0) OR ( approved = 1 AND date_submitted >= DATE_SUB(CURDATE(), INTERVAL 3 DAY))) ORDER BY approved; -->
+
+ <!-- UK Query -->
+ <!-- SELECT * FROM outbound_payments WHERE (entity = 'UK') AND ((approved = 0) OR ( approved = 1 AND date_submitted >= DATE_SUB(CURDATE(), INTERVAL 3 DAY))) ORDER BY approved; -->
