@@ -1,0 +1,1 @@
+CREATE TABLE `finance_test`.`outstanding_invoices` ( `id` INT NOT NULL AUTO_INCREMENT , `entity` VARCHAR(20) NOT NULL , `name` VARCHAR(100) NOT NULL , `amount` INT(100000) NOT NULL , `due_date` DATE NOT NULL , `urgency` VARCHAR(25) NOT NULL , `PDF` MEDIUMBLOB NULL DEFAULT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
