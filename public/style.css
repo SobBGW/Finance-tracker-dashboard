@@ -258,6 +258,12 @@ div.content {
     border-radius: 5px;
     color: #fff;
 }
+.urgency-medium{
+    color: yellow;
+}
+.urgency-high{
+    color: rgb(12, 214, 56);
+}
 
 /* item4 */
 .tasks-table{

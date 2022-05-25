@@ -99,13 +99,42 @@ function getDailyRecon(){
 }
 
 
-function getOutstandingInvoices(){
+function getOutstandingInvoicesuk(){
     $.get("http://localhost/finance-tracker-dashboard/api.php?outstanding_invoices=1", (data, status) => {
         console.log(data[0])
+        $(".invoice-uk").empty()
 
         data.forEach(element => {
             console.log(element)
-            $(".outstanding-invoices-body").append("");
+            if(element["urgency"] == "High"){
+                $(".invoice-uk").append(`<tr> <td>${element["entity"]}</td> <td>${element["name"]}</td> <td>${element["amount"]}</td> <td>${element["date_due"]}</td> <td class="urgency-high">${element["urgency"]}</td> <td><a href="http://localhost/finance-tracker-dashboard/api.php?approve_outstanding_invoice=${element["id"]}"><button class="auth-button">Paid</button></a></td> </tr>`);
+            }
+            else if(element["urgency"] == "Medium"){
+                $(".invoice-uk").append(`<tr> <td>${element["entity"]}</td> <td>${element["name"]}</td> <td>${element["amount"]}</td> <td>${element["date_due"]}</td> <td class="urgency-medium">${element["urgency"]}</td> <td><a href="http://localhost/finance-tracker-dashboard/api.php?approve_outstanding_invoice=${element["id"]}"><button class="auth-button">Paid</button></a></td> </tr>`);
+            }
+            else{
+                $(".invoice-uk").append(`<tr> <td>${element["entity"]}</td> <td>${element["name"]}</td> <td>${element["amount"]}</td> <td>${element["date_due"]}</td> <td>${element["urgency"]}</td> <td><a href="http://localhost/finance-tracker-dashboard/api.php?approve_outstanding_invoice=${element["id"]}"><button class="auth-button">Paid</button></a></td> </tr>`);
+            }
+        });
+    })
+}
+
+function getOutstandingInvoicescy(){
+    $.get("http://localhost/finance-tracker-dashboard/api.php?outstanding_invoices=2", (data, status) => {
+        console.log(data[0])
+        $(".invoice-cy").empty()
+
+        data.forEach(element => {
+            console.log(element)
+            if(element["urgency"] == "High"){
+                $(".invoice-cy").append(`<tr> <td>${element["entity"]}</td> <td>${element["name"]}</td> <td>${element["amount"]}</td> <td>${element["date_due"]}</td> <td class="urgency-high">${element["urgency"]}</td> <td><a href="http://localhost/finance-tracker-dashboard/api.php?approve_outstanding_invoice=${element["id"]}"><button class="auth-button">Paid</button></a></td> </tr>`);
+            }
+            else if(element["urgency"] == "Medium"){
+                $(".invoice-cy").append(`<tr> <td>${element["entity"]}</td> <td>${element["name"]}</td> <td>${element["amount"]}</td> <td>${element["date_due"]}</td> <td class="urgency-medium">${element["urgency"]}</td> <td><a href="http://localhost/finance-tracker-dashboard/api.php?approve_outstanding_invoice=${element["id"]}"><button class="auth-button">Paid</button></a></td> </tr>`);
+            }
+            else{
+                $(".invoice-cy").append(`<tr> <td>${element["entity"]}</td> <td>${element["name"]}</td> <td>${element["amount"]}</td> <td>${element["date_due"]}</td> <td>${element["urgency"]}</td> <td><a href="http://localhost/finance-tracker-dashboard/api.php?approve_outstanding_invoice=${element["id"]}"><button class="auth-button">Paid</button></a></td> </tr>`);
+            }
         });
     })
 }
@@ -162,7 +191,9 @@ function dailyTasks(){
 $(document).ready(function() {
     getDailyRecon();
 
-    // getOutstandingInvoices()
+    getOutstandingInvoicesuk()
+
+    getOutstandingInvoicescy()
 
     outboundBankPaymentsuk()
 

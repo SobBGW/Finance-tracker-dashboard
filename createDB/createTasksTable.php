@@ -26,3 +26,4 @@ if ($conn -> query($sql) === TRUE){
 
 
 ?>
+<!-- SELECT * FROM daily_tasks WHERE (completed = 0) OR (completed = 1 AND due_date >= DATE_SUB(CURDATE(), INTERVAL 2 DAY)) -->

@@ -14,6 +14,9 @@ header("Access-Control-Allow-Origin: *");
 // Returned Content Type
 header("Content-Type:application/json");
 
+// Set timezone to Europe
+date_default_timezone_set('Europe/London');
+
 
 // ENPOINT 1 - GET DAILY RECON
 if(isset($_GET["daily_recon"]) && $_GET["daily_recon"] !== ""){
@@ -88,24 +91,75 @@ elseif(isset($_GET["set_approval_daily_recon"]) && ($_GET["set_approval_daily_re
 elseif(isset($_GET["outstanding_invoices"]) && $_GET["outstanding_invoices"] !== ""){
     // Run Query to get the items in outstanding invoices table
 
-    $sql = "SELECT * FROM `outbound_payments`;";
-    $result = $conn -> query($sql);
-    
-    if($result -> num_rows > 0){
-        while($row = $result -> fetch_assoc()){
-            $rows[] = $row;
-        }
-    }
-    else {
-        header("HTTP/1.1 500 Some Went Wrong");
-    }
+    // Return UK Table
+    if($_GET["outstanding_invoices"] === "1"){
 
-    echo json_encode($rows);
+        $sql = "SELECT * FROM `outstanding_invoices` WHERE entity = 'UK' AND approved = 0;";
+        $result = $conn -> query($sql);
+        
+        if($result -> num_rows > 0){
+            while($row = $result -> fetch_assoc()){
+                $rows[] = $row;
+            }
+        }
+        else {
+            header("HTTP/1.1 500 Some Went Wrong");
+        }
+
+        echo json_encode($rows);
+    }
+    // Return CY Table
+    elseif($_GET["outstanding_invoices"] === "2"){
+
+        $sql = "SELECT * FROM `outstanding_invoices` WHERE entity = 'CY' AND approved = 0;";
+        $result = $conn -> query($sql);
+        
+        if($result -> num_rows > 0){
+            while($row = $result -> fetch_assoc()){
+                $rows[] = $row;
+            }
+        }
+        else {
+            header("HTTP/1.1 500 Some Went Wrong");
+        }
+
+        echo json_encode($rows);
+
+    }
+    else{
+        header("location: finance-dashboard.php");
+    }
 
 }
+// ENPOINT - APPROVE OUTSTANDING INVOICE
+elseif(isset($_GET["approve_outstanding_invoice"]) && $_GET["approve_outstanding_invoice"] !== ""){
+    $id = $_GET["approve_outstanding_invoice"];
+    $sql = "UPDATE outstanding_invoices SET approved = '1' WHERE id = '$id'";
+
+    if ($conn->query($sql) === TRUE) {
+        header("location: finance-dashboard.php");
+    } else {
+        header("location: finance-dashboard.php");
+    }
+
+}
+
 // ENDPOINT 4 - ADD OUTSTANDING INVOICE - COME BACK TO
-elseif(isset($_GET["add_outstanding_invoice"])){
-    // Run Query to add items in outstanding invoices table
+elseif(isset($_POST["entity-selection"]) && $_POST["entity-selection"] !== "" && isset($_POST["name-input"]) && $_POST["name-input"] !== "" && isset($_POST["amount-input"]) && $_POST["amount-input"] !== "" && isset($_POST["date-input"]) && $_POST["date-input"] !== "" && isset($_POST["urgency-selection"]) && $_POST["urgency-selection"] !== ""){
+    
+    $entity = $_POST["entity-selection"];
+    $name = $_POST["name-input"];
+    $amount = $_POST["amount-input"];
+    $date = $_POST["date-input"];
+    $urgency = $_POST["urgency-selection"];
+
+    $sql = "INSERT INTO outstanding_invoices (`id`, `entity`, `name`, `amount`, `date_due`, `urgency`, `PDF`, `approved`) VALUES (NULL, '$entity', '$name', '$amount', '$date', '$urgency', NULL, '0')";
+
+    if ($conn->query($sql) === TRUE) {
+        header("location: finance-dashboard.php");
+    } else {
+        header("location: finance-dashboard.php");
+    }
 }
 
 // ENDPOINT 5 - GET OUTBOUND BANK PAYMENTS

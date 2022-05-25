@@ -93,14 +93,14 @@ if(!isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] !== true){
                             <th>Amount</th>
                             <th>Date Due</th>
                             <th>Urgency</th>
-                            <th>PDF</th>
+                            <!-- <th>PDF</th> -->
                             <th> </th>
                         </tr>
 
                     </thead>
-                    <tbody class="outstanding-invoices-body">
+                    <tbody class="outstanding-invoices-body invoice-uk">
 
-                    <tr>
+                    <!-- <tr>
                         <td>UK</td>
                         <td>TFG</td>
                         <td>788241</td>
@@ -109,74 +109,8 @@ if(!isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] !== true){
                         <td>view</td>
                         <td><button>Paid</button></td>
 
-                    </tr>
-
-                    <tr>
-                        <td>UK</td>
-                        <td>TFG</td>
-                        <td>788241</td>
-                        <td>2022-01-21</td>
-                        <td>High</td>
-                        <td>view</td>
-                        <td><button>Paid</button></td>
-
-                    </tr>
-
-                    <tr>
-                        <td>UK</td>
-                        <td>TFG</td>
-                        <td>788241</td>
-                        <td>2022-01-21</td>
-                        <td>High</td>
-                        <td>view</td>
-                        <td><button>Paid</button></td>
-
-                    </tr>
-
-                    <tr>
-                        <td>UK</td>
-                        <td>TFG</td>
-                        <td>788241</td>
-                        <td>2022-01-21</td>
-                        <td>High</td>
-                        <td>view</td>
-                        <td><button>Paid</button></td>
-
-                    </tr>
-
-                    <tr>
-                        <td>UK</td>
-                        <td>TFG</td>
-                        <td>788241</td>
-                        <td>2022-01-21</td>
-                        <td>High</td>
-                        <td>view</td>
-                        <td><button>Paid</button></td>
-
-                    </tr>
-
-                    <tr>
-                        <td>UK</td>
-                        <td>TFG</td>
-                        <td>788241</td>
-                        <td>2022-01-21</td>
-                        <td>High</td>
-                        <td>view</td>
-                        <td><button>Paid</button></td>
-
-                    </tr>
-
-                    <tr>
-                        <td>UK</td>
-                        <td>TFG</td>
-                        <td>788241</td>
-                        <td>2022-01-21</td>
-                        <td>High</td>
-                        <td>view</td>
-                        <td><button>Paid</button></td>
-
-                    </tr>
-
+                    </tr> -->
+    
 
                     </tbody>
                 </table>
@@ -192,14 +126,14 @@ if(!isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] !== true){
                             <th>Amount</th>
                             <th>Date Due</th>
                             <th>Urgency</th>
-                            <th>PDF</th>
+                            <!-- <th>PDF</th> -->
                             <th> </th>
                         </tr>
 
                     </thead>
-                    <tbody class="outstanding-invoices-body">
+                    <tbody class="outstanding-invoices-body invoice-cy">
 
-                   <tr>
+                    <!-- <tr>
                         <td>CY</td>
                         <td>TFG</td>
                         <td>788241</td>
@@ -208,68 +142,40 @@ if(!isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] !== true){
                         <td>view</td>
                         <td><button>Paid</button></td>
 
-                    </tr>
+                    </tr> -->
 
-                    <tr>
-                        <td>CY</td>
-                        <td>TFG</td>
-                        <td>788241</td>
-                        <td>2022-01-21</td>
-                        <td>High</td>
-                        <td>view</td>
-                        <td><button>Paid</button></td>
-
-                    </tr>
-
-                    <tr>
-                        <td>CY</td>
-                        <td>TFG</td>
-                        <td>788241</td>
-                        <td>2022-01-21</td>
-                        <td>High</td>
-                        <td>view</td>
-                        <td><button>Paid</button></td>
-
-                    </tr>
-
-                    <tr>
-                        <td>CY</td>
-                        <td>TFG</td>
-                        <td>788241</td>
-                        <td>2022-01-21</td>
-                        <td>High</td>
-                        <td>view</td>
-                        <td><button>Paid</button></td>
-
-                    </tr>
                     </tbody>
                 </table>
             </div>
 
-            <!-- Add a new  -->
+            <!-- Add a new invoice  -->
 
             <div class="add-invoice-box">
+                <form action="api.php" method="post">
+                    
+                    <select name="entity-selection" id="entity-selection">
+                        <option value="UK">UK</option>
+                        <option value="CY">CY</option>
+                    </select>
 
-                <select name="entity-selection" id="entity-selection">
-                    <option value="UK">UK</option>
-                    <option value="CY">CY</option>
-                </select>
+                    <input type="text" name="name-input" id="name-input" placeholder="Name of invoice">
 
-                <input type="text" name="name-input" id="name-input" placeholder="Name of invoice">
+                    <input type="number" name="amount-input" id="amount-input" placeholder="1000">
 
-                <input type="number" name="amount-input" id="amount-input" placeholder="1000">
+                    <input type="text" name="date-input" id="date-input" placeholder="YYYY-MM-DD">
 
-                <input type="text" name="date-input" id="date-input" placeholder="YYYY-MM-DD">
+                    <select name="urgency-selection" id="urgency-selection">
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                    </select>
 
-                <select name="urgency-selection" id="urgency-selection">
-                    <option value="Low">Low</option>
-                    <option value="Medium">Medium</option>
-                    <option value="High">High</option>
-                </select>
+                    <!-- Come Back To At A Later Date -->
+                    <!-- <input type="file" name="PDF-upload" id="PDF-upload"> -->
 
-                <input type="file" name="PDF-upload" id="PDF-upload">
+                    <button type="submit">Submit</button>
 
-                <button>Submit</button>
+                </form>
 
 
             </div>
