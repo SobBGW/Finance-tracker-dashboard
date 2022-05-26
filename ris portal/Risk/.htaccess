@@ -1,0 +1,3 @@
+SetEnv SERVER "blackwellglobal.mysql.database.azure.com"
+SetEnv USERNAME "chappie_azure@blackwellglobal"
+SetEnv PASSWORD "Npvjm8ctnEsF2XWAQU8jzgh4ux2fZfUD"
